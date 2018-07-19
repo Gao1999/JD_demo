@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <tab
+        icon="@drawable/ac0"
+
+        id="@+id/btn1" />
+
+    <tab
+        icon="@drawable/abw"
+
+        id="@+id/btn2" />
+
+    <tab
+        icon="@drawable/aby"
+
+        id="@+id/btn3" />
+
+    <tab
+        icon="@drawable/abu"
+
+        id="@+id/btn4" />
+
+    <tab
+        icon="@drawable/ac2"
+
+
+        id="@+id/btn5" />
+</tabs>

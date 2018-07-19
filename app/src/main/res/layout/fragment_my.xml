@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/_my_refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:background="@drawable/reg_bg"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/sz" />
+
+                        <ImageView
+                            android:id="@+id/my_image_xx"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/xx" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginLeft="30dp"
+                        android:orientation="horizontal">
+
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            android:id="@+id/my_pic"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            app:roundAsCircle="true"
+                            app:placeholderImage="@drawable/user" />
+
+                        <TextView
+                            android:id="@+id/my_mobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dp"
+                            android:gravity="center_vertical"
+                            android:text="请先登录"
+                            android:textColor="#fff"
+                            android:textSize="26dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/my_recycle_dd"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#fff" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/my_recycle_gd"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#fff" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/b5a" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/my_recycle_Tuijian"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </ScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

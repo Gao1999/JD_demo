@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bwie.jd_demo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application
+        android:name=".app.MyApp"
+        android:allowBackup="true"
+        android:icon="@drawable/root"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.ShowActivity" />
+        <activity android:name=".mvp.my.view.activity.LoginActivity" />
+        <activity android:name=".mvp.my.view.activity.RegAcyivity" />
+        <activity android:name=".mvp.home.view.GoodsdetailsActivity" />
+        <activity android:name=".mvp.classify.view.activity.ClassifyActivity" />
+        <activity android:name=".mvp.home.view.SearchProductActivity" />
+        <activity android:name=".mvp.home.view.SearchActivity" />
+        <activity android:name=".mvp.my.view.activity.ModifyActivity"></activity>
+    </application>
+
+</manifest>
