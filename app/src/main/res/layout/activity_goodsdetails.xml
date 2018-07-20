@@ -104,6 +104,7 @@
             android:text="加入购物车" />
 
         <Button
+            android:id="@+id/goods_createOrder"
             android:layout_width="130dp"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"

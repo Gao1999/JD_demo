@@ -18,9 +18,13 @@ import android.widget.Toast;
 
 import com.bwie.jd_demo.R;
 import com.bwie.jd_demo.base.BaseFragment;
+import com.bwie.jd_demo.mvp.shopping.model.bean.CreateOrderBean;
+import com.bwie.jd_demo.mvp.shopping.model.bean.DefaultAddressBean;
 import com.bwie.jd_demo.mvp.shopping.model.bean.DeleteCartBean;
+import com.bwie.jd_demo.mvp.shopping.model.bean.OrdersBean;
 import com.bwie.jd_demo.mvp.shopping.model.bean.ShoppingBean;
 import com.bwie.jd_demo.mvp.shopping.model.bean.UpDataCartBean;
+import com.bwie.jd_demo.mvp.shopping.model.bean.UpdataOrderBean;
 import com.bwie.jd_demo.mvp.shopping.presenter.ShoppingPresenter;
 import com.bwie.jd_demo.mvp.shopping.view.adapter.MyExpandableListView;
 import com.bwie.jd_demo.mvp.shopping.view.iview.ShoppingView;
@@ -39,6 +43,7 @@ public class ShoppingFragment extends BaseFragment<ShoppingPresenter> implements
     private int uid;
     private boolean login;
     private List<ShoppingBean.DataBean> list = new ArrayList<>();
+    private double zj;
 
     @Override
     protected ShoppingPresenter providePresenter() {
@@ -54,9 +59,10 @@ public class ShoppingFragment extends BaseFragment<ShoppingPresenter> implements
             presenter.ShoppingNetData(uid);
         } else {
             Toast.makeText(getActivity(), "您还没有登录,请先去登录...", Toast.LENGTH_SHORT).show();
-            if (myExpandableListView!=null){
+            if (myExpandableListView != null) {
                 list.clear();
                 myExpandableListView.notifyDataSetChanged();
+                setChangeNumberAndPriceStatus();
             }
         }
     }
@@ -73,6 +79,7 @@ public class ShoppingFragment extends BaseFragment<ShoppingPresenter> implements
         priceTv = view.findViewById(R.id.shopping_price);
         numBtn = view.findViewById(R.id.shopping_number);
         checkBox.setOnClickListener(this);
+        numBtn.setOnClickListener(this);
 
 
     }
@@ -84,9 +91,8 @@ public class ShoppingFragment extends BaseFragment<ShoppingPresenter> implements
 
     @Override
     public void Success(final ShoppingBean shoppingBean) {
-        Log.e("tag", "Success: " + "saksadasdasdadsadads");
         final List<ShoppingBean.DataBean> data = shoppingBean.getData();
-        Log.e("tag", "Success: " + data.size());
+
         list.clear();
         list.addAll(data);
         myExpandableListView = new MyExpandableListView(list);
@@ -114,12 +120,15 @@ public class ShoppingFragment extends BaseFragment<ShoppingPresenter> implements
             @Override
             public void setOnClickProductChange(int groupPosition, int childPosition) {
                 ShoppingBean.DataBean.ListBean listBean = list.get(groupPosition).getList().get(childPosition);
+
                 int sellerid = listBean.getSellerid();
                 int pid = listBean.getPid();
                 int num = listBean.getNum();
                 int selected = listBean.getSelected();
-                presenter.UpDataCartNet(uid, sellerid, pid, num, selected);
+
                 myExpandableListView.onChangeProduct(groupPosition, childPosition);
+
+                presenter.UpDataCartNet(uid, sellerid, pid, num, (selected == 0 ? 1 : 0));
                 myExpandableListView.notifyDataSetChanged();
                 setChangeNumberAndPriceStatus();
             }
@@ -176,7 +185,7 @@ public class ShoppingFragment extends BaseFragment<ShoppingPresenter> implements
     @Override
     public void Error(String error) {
         Log.d("tag", "Error: " + error);
-        if(myExpandableListView!=null){
+        if (myExpandableListView != null) {
             list.clear();
             myExpandableListView.notifyDataSetChanged();
         }
@@ -197,6 +206,28 @@ public class ShoppingFragment extends BaseFragment<ShoppingPresenter> implements
         Log.e("tag", "UpDataCartSuccess: " + upDataCartBean.getMsg());
     }
 
+    @Override
+    public void CreateOrdeSuccess(CreateOrderBean createOrderBean) {
+        Toast.makeText(getActivity(), "创建订单成功", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), SelectOrdersActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void SelectOrderNetSuccess(OrdersBean ordersBean) {
+
+    }
+
+    @Override
+    public void UpdateOrderNetSuccess(UpdataOrderBean updataOrderBean) {
+
+    }
+
+    @Override
+    public void DefaultAddrSuccess(DefaultAddressBean defaultAddressBean) {
+
+    }
+
 
     public void setChangeNumberAndPriceStatus() {
         //判断所有的商品是否被选中
@@ -208,16 +239,32 @@ public class ShoppingFragment extends BaseFragment<ShoppingPresenter> implements
 
         int numberStatus = myExpandableListView.isChangeNumberStatus();
         numBtn.setText("去结算(" + numberStatus + ")");
+
+        zj = priceStutus;
+        Log.e("tag", "setChangeNumberAndPriceStatus: " + zj);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.shopping_checkbox:
-                boolean clickChangeSurllendStatus = myExpandableListView.isClickChangeSurllendStatus();
-                myExpandableListView.isClickCheckedChangerStatus(!clickChangeSurllendStatus);
-                myExpandableListView.notifyDataSetChanged();
-                setChangeNumberAndPriceStatus();
+                if (login) {
+                    boolean clickChangeSurllendStatus = myExpandableListView.isClickChangeSurllendStatus();
+                    myExpandableListView.isClickCheckedChangerStatus(!clickChangeSurllendStatus);
+                    myExpandableListView.notifyDataSetChanged();
+                    setChangeNumberAndPriceStatus();
+                } else {
+                    Toast.makeText(getActivity(), "还没商品", Toast.LENGTH_SHORT).show();
+                }
+
+
+                break;
+            case R.id.shopping_number:
+                if (zj < 1) {
+                    Toast.makeText(getActivity(), "您还没有选择商品", Toast.LENGTH_SHORT).show();
+                } else {
+                    presenter.CreateOrderNet(uid, zj);
+                }
 
                 break;
         }

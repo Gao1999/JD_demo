@@ -3,6 +3,7 @@ package com.bwie.jd_demo.mvp.home.model;
 import com.bwie.jd_demo.mvp.home.model.bean.AddCartBean;
 import com.bwie.jd_demo.mvp.home.model.bean.GoodsDetailBean;
 import com.bwie.jd_demo.mvp.home.model.bean.SearchBean;
+import com.bwie.jd_demo.mvp.shopping.model.bean.CreateOrderBean;
 import com.bwie.jd_demo.utils.RetrofitManager;
 
 import io.reactivex.Observable;
@@ -20,5 +21,10 @@ public class GoodsModel {
         return RetrofitManager.getDefault().create(IHomeApi.class).SearchFromNet(keywords, page, sort);
 
     }
+
+    public Observable<CreateOrderBean> createOrderNet(int uid, double price) {
+        return RetrofitManager.getDefault().create(IHomeApi.class).CreateOrderNet(uid, price);
+    }
+
 
 }

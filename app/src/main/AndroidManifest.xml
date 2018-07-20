@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".app.MyApp"
@@ -29,7 +29,9 @@
         <activity android:name=".mvp.classify.view.activity.ClassifyActivity" />
         <activity android:name=".mvp.home.view.SearchProductActivity" />
         <activity android:name=".mvp.home.view.SearchActivity" />
-        <activity android:name=".mvp.my.view.activity.ModifyActivity"></activity>
+        <activity android:name=".mvp.my.view.activity.ModifyActivity" />
+        <activity android:name=".mvp.shopping.view.SelectOrdersActivity" />
+        <activity android:name=".mvp.shopping.view.AddressActivity"></activity>
     </application>
 
 </manifest>

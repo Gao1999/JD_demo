@@ -8,6 +8,7 @@ import com.bwie.jd_demo.mvp.home.model.bean.AddCartBean;
 import com.bwie.jd_demo.mvp.home.model.bean.GoodsDetailBean;
 import com.bwie.jd_demo.mvp.home.model.bean.SearchBean;
 import com.bwie.jd_demo.mvp.home.view.iview.IGoodsDetailsView;
+import com.bwie.jd_demo.mvp.shopping.model.bean.CreateOrderBean;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -139,5 +140,44 @@ public class GoodsPresenter extends BasePresenter<IGoodsDetailsView> {
 
                     }
                 });
+    }
+
+    @SuppressLint("CheckResult")
+    public void createOrderNet(int uid, double price) {
+        goodsModel.createOrderNet(uid, price)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<CreateOrderBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        compositeDisposable.add(d);
+                    }
+
+                    @Override
+                    public void onNext(CreateOrderBean createOrderBean) {
+                        if ("0".equals(createOrderBean.getCode())) {
+                            if (view != null) {
+                                view.createOrderSuccess(createOrderBean);
+                            }
+                        } else {
+                            if (view != null) {
+                                view.ERROR("创建订单失败!");
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if (view != null) {
+                            view.ERROR("创建订单失败!");
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
     }
 }

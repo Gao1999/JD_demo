@@ -46,7 +46,7 @@ public class FindFragment extends Fragment {
         fs.add(foodFragment);
 
 
-        FindFragmentViewPager findFragmentViewPager = new FindFragmentViewPager(getFragmentManager(), fs);
+        FindFragmentViewPager findFragmentViewPager = new FindFragmentViewPager(getChildFragmentManager(), fs);
         viewPager.setAdapter(findFragmentViewPager);
         //添加选项卡
         TabLayout.Tab tab1 = tabLayout.newTab();

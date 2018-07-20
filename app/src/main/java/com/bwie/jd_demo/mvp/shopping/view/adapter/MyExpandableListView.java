@@ -109,7 +109,7 @@ public class MyExpandableListView extends BaseExpandableListAdapter {
         } else {
             viewHolderChild = (ViewHolderChild) convertView.getTag();
         }
-        viewHolderChild.shoppingGroupPrice.setText("￥:" + listBean.getPrice());
+        viewHolderChild.shoppingGroupPrice.setText("￥:" + listBean.getBargainPrice());
         viewHolderChild.shoppingGroupTitlle.setText(listBean.getTitle());
         String images = listBean.getImages();
         String[] split = images.split("\\|");
@@ -171,7 +171,7 @@ public class MyExpandableListView extends BaseExpandableListAdapter {
             for (int j = 0; j < list.size(); j++) {
                 if (list.get(j).getSelected() == 1) {
                     int num = list.get(j).getNum();
-                    double price = list.get(j).getPrice();
+                    double price = list.get(j).getBargainPrice();
                     totalPrice += price * num;
                 }
             }

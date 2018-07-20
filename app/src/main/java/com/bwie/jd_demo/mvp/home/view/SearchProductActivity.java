@@ -15,6 +15,7 @@ import com.bwie.jd_demo.mvp.home.model.bean.SearchBean;
 import com.bwie.jd_demo.mvp.home.presenter.GoodsPresenter;
 import com.bwie.jd_demo.mvp.home.view.adapter.MyRecycleSearchProduct;
 import com.bwie.jd_demo.mvp.home.view.iview.IGoodsDetailsView;
+import com.bwie.jd_demo.mvp.shopping.model.bean.CreateOrderBean;
 
 import java.util.List;
 
@@ -116,5 +117,10 @@ public class SearchProductActivity extends BaseActivity<GoodsPresenter> implemen
                 startActivityForResult(intent, 100);
             }
         });
+    }
+
+    @Override
+    public void createOrderSuccess(CreateOrderBean createOrderBean) {
+
     }
 }

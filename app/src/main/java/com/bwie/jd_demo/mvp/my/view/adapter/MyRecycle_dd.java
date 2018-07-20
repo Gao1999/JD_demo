@@ -31,9 +31,17 @@ public class MyRecycle_dd extends RecyclerView.Adapter<MyRecycle_dd.MyViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.imageView.setImageResource(list.get(position));
         holder.title.setText(listTitle_dd.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onItemClickListener != null) {
+                    onItemClickListener.OnItemClickListener(position);
+                }
+            }
+        });
     }
 
     @Override
@@ -51,5 +59,15 @@ public class MyRecycle_dd extends RecyclerView.Adapter<MyRecycle_dd.MyViewHolder
             imageView = itemView.findViewById(R.id.my_recycleview_dd_pic);
             title = itemView.findViewById(R.id.my_recycleview_dd_title);
         }
+    }
+
+    public setOnItemClickListener onItemClickListener;
+
+    public void setOnItemClickListener(setOnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface setOnItemClickListener {
+        void OnItemClickListener(int position);
     }
 }

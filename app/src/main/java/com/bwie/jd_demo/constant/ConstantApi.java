@@ -31,9 +31,25 @@ public class ConstantApi {
 
     public static final String UserInfo = "user/getUserInfo";
 
-    public static final String newsNet = "http://v.juhe.cn/toutiao/index?type=top&key=218adf1d15a36b27c3cef5a30727906d";
+    public static final String newsNet = "http://v.juhe.cn/toutiao/index?type=top&key=2f41498b35e69877fc56dc96776e5d1f";
 
     public static final String WelfareNet = "https://www.apiopen.top/meituApi?page=1";
+
+    public static final String CreateOrder = "product/createOrder";
+
+    public static final String GetOrders = "product/getOrders";
+
+    public static final String UpdateOrder = "product/updateOrder";
+
+    public static final String DefaultAddr = "user/getDefaultAddr";
+
+    public static final String GetAddrs = "user/getAddrs";
+
+    public static final String AddAddr = "user/addAddr";
+
+    public static final String UpdateAddr = "user/updateAddr";
+
+    public static final String SetAddr = "user/setAddr";
 
 
 }

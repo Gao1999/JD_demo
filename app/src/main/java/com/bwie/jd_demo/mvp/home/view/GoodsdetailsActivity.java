@@ -22,6 +22,8 @@ import com.bwie.jd_demo.mvp.home.presenter.GoodsPresenter;
 import com.bwie.jd_demo.mvp.home.view.adapter.MyRecycleGoods;
 import com.bwie.jd_demo.mvp.home.view.iview.IGoodsDetailsView;
 import com.bwie.jd_demo.mvp.my.view.activity.LoginActivity;
+import com.bwie.jd_demo.mvp.shopping.model.bean.CreateOrderBean;
+import com.bwie.jd_demo.mvp.shopping.view.SelectOrdersActivity;
 import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.generic.RoundingParams;
@@ -44,6 +46,8 @@ public class GoodsdetailsActivity extends BaseActivity<GoodsPresenter> implement
     private TextView title;
     private TextView name;
     private int uid;
+    private Button createOrder;
+    private double dZprice;
 
     @Override
     protected void initData() {
@@ -86,6 +90,13 @@ public class GoodsdetailsActivity extends BaseActivity<GoodsPresenter> implement
                 finish();
             }
         });
+        createOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("tag", "onClick: " + dZprice);
+                presenter.createOrderNet(uid, dZprice);
+            }
+        });
     }
 
     @Override
@@ -98,6 +109,7 @@ public class GoodsdetailsActivity extends BaseActivity<GoodsPresenter> implement
         price = findViewById(R.id.goodsDetails_price);
         title = findViewById(R.id.goodsDetails_title);
         name = findViewById(R.id.goodsDetails_name);
+        createOrder = findViewById(R.id.goods_createOrder);
 
 
     }
@@ -143,8 +155,8 @@ public class GoodsdetailsActivity extends BaseActivity<GoodsPresenter> implement
 
         // 设置XBanner页面切换的时间，即动画时长
         xBanner.setPageChangeDuration(1000);
-
-        price.setText("￥:" + data.getPrice());
+        dZprice = data.getBargainPrice();
+        price.setText("￥:" + dZprice);
         title.setText(data.getTitle());
         name.setText(data.getSubhead());
     }
@@ -169,5 +181,12 @@ public class GoodsdetailsActivity extends BaseActivity<GoodsPresenter> implement
     @Override
     public void SeachSuccess(SearchBean searchBean) {
 
+    }
+
+    @Override
+    public void createOrderSuccess(CreateOrderBean createOrderBean) {
+        Log.e("tag", "GETERROR: " + createOrderBean.getMsg());
+        Intent intent = new Intent(GoodsdetailsActivity.this, SelectOrdersActivity.class);
+        startActivity(intent);
     }
 }

@@ -69,19 +69,19 @@ public class WelfareFragment extends BaseFragment<FindPresenter> implements Find
 
     @Override
     public void Error(String error) {
-        Log.e("tag", "Error: "+error );
+        Log.e("tag", "Error: " + error);
     }
 
     @Override
     public void WelfareSuccess(WelfareBean welfareBean) {
-        Log.e("tag", "WelfareSuccess: "+welfareBean.getMsg() );
+        Log.e("tag", "WelfareSuccess: " + welfareBean.getMsg());
         List<WelfareBean.DataBean> data = welfareBean.getData();
 
         MyRecycleViewWelfare myRecycleViewWelfare = new MyRecycleViewWelfare(data);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
         gridLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         xRecyclerView.setLayoutManager(gridLayoutManager);
-        Log.e("tag", "WelfareSuccess: "+data.size() );
+        Log.e("tag", "WelfareSuccess: " + data.size());
         xRecyclerView.setAdapter(myRecycleViewWelfare);
 
     }

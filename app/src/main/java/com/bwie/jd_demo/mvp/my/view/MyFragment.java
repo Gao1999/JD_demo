@@ -30,6 +30,7 @@ import com.bwie.jd_demo.mvp.my.view.activity.ModifyActivity;
 import com.bwie.jd_demo.mvp.my.view.adapter.MyRecycle_dd;
 import com.bwie.jd_demo.mvp.my.view.adapter.MyRecycle_gd;
 import com.bwie.jd_demo.mvp.my.view.iview.MyView;
+import com.bwie.jd_demo.mvp.shopping.view.SelectOrdersActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.scwang.smartrefresh.header.FlyRefreshHeader;
 import com.scwang.smartrefresh.header.TaurusHeader;
@@ -158,11 +159,22 @@ public class MyFragment extends BaseFragment<MyPresenter> implements MyView {
         recyclerView_dd.setLayoutManager(linearLayoutManager);
         recyclerView_dd.setAdapter(myRecycle_dd);
 
+
         MyRecycle_gd myRecycle_gd = new MyRecycle_gd(listPic_gd, listTitle_gd);
         LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getContext());
         linearLayoutManager1.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView_gd.setLayoutManager(linearLayoutManager1);
         recyclerView_gd.setAdapter(myRecycle_gd);
+        myRecycle_dd.setOnItemClickListener(new MyRecycle_dd.setOnItemClickListener() {
+            @Override
+            public void OnItemClickListener(int position) {
+                if (position == 4) {
+                    Intent intent = new Intent(getActivity(), SelectOrdersActivity.class);
+                    startActivity(intent);
+                }
+
+            }
+        });
     }
 
     public void getDataFromSharedPreferences() {
