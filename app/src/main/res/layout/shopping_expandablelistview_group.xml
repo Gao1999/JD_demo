@@ -18,5 +18,5 @@
         android:text="商家"
         android:layout_marginLeft="20dp"
         android:textColor="#f00"
-        android:textSize="30dp" />
+        android:textSize="24dp" />
 </LinearLayout>

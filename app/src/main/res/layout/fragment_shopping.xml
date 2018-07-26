@@ -15,7 +15,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:background="#FAFAD2"
         android:orientation="horizontal">
 
@@ -44,7 +44,7 @@
         <Button
             android:id="@+id/shopping_number"
             android:layout_width="120dp"
-            android:layout_height="70dp"
+            android:layout_height="50dp"
             android:layout_marginRight="10dp"
             android:text="去结算(0)" />
     </LinearLayout>

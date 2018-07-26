@@ -29,6 +29,7 @@ public class SearchActivity extends AppCompatActivity {
     private DaoManager daoManager;
     private DaoSession daoSession;
     private ProductTitleDao productTitleDao;
+    private ImageView backIv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +82,12 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-
+        backIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void initViews() {
@@ -89,6 +95,7 @@ public class SearchActivity extends AppCompatActivity {
         searchSS = findViewById(R.id.search_ss);
         flowLayout = findViewById(R.id.search_flowlayout);
         deleteBtn = findViewById(R.id.search_delete);
+        backIv = findViewById(R.id.search_back);
 
         daoManager = DaoManager.instance(this);
         daoSession = daoManager.getDaoSession();

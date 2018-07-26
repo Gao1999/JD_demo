@@ -12,13 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginTop="5dp"
         android:text="登录界面"
-        android:textSize="32dp" />
+        android:textSize="30dp" />
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:src="@drawable/root" />
 
     <LinearLayout
@@ -36,7 +37,7 @@
 
         <EditText
             android:id="@+id/my_login_user"
-            android:layout_width="300dp"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:hint="请输入手机号..." />
@@ -57,7 +58,7 @@
 
         <EditText
             android:id="@+id/my_login_pass"
-            android:layout_width="300dp"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:hint="请输入密码..." />
@@ -72,15 +73,15 @@
 
         <Button
             android:id="@+id/my_reg"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:text="注册" />
 
         <Button
             android:id="@+id/my_login"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
+            android:layout_marginLeft="130dp"
             android:text="登录" />
     </LinearLayout>
 
@@ -93,14 +94,14 @@
 
         <ImageView
             android:id="@+id/my_qq_login"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:src="@drawable/mqq" />
 
         <ImageView
             android:id="@+id/my_qq_weixin"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="150dp"
             android:src="@drawable/weixin" />
     </LinearLayout>

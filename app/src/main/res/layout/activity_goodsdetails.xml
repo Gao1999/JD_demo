@@ -38,7 +38,7 @@
     <com.stx.xhb.xbanner.XBanner
         android:id="@+id/goodsDetails_xbanner"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="280dp"
         android:layout_marginTop="5dp"
         app:AutoPlayTime="3000"
         app:isShowNumberIndicator="true"
@@ -56,23 +56,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="123"
+            android:layout_marginLeft="6dp"
             android:textColor="#f00"
-            android:textSize="24dp" />
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/goodsDetails_title"
             android:layout_width="match_parent"
+            android:layout_marginLeft="6dp"
             android:layout_height="wrap_content"
             android:text="123"
-            android:textSize="24dp" />
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/goodsDetails_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="123"
+            android:layout_marginLeft="6dp"
             android:textColor="#f00"
-            android:textSize="24dp" />
+            android:textSize="20dp" />
     </LinearLayout>
 
     <View
@@ -82,20 +85,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:layout_gravity="center_vertical"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
         android:gravity="right">
 
         <ImageView
-            android:layout_width="70dp"
+            android:layout_width="45dp"
             android:layout_height="match_parent"
             android:src="@drawable/kh" />
 
         <Button
             android:id="@+id/goods_add_shooping"
-            android:layout_width="130dp"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_marginLeft="20dp"
@@ -105,7 +108,7 @@
 
         <Button
             android:id="@+id/goods_createOrder"
-            android:layout_width="130dp"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
             android:background="#f00"

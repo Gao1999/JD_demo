@@ -17,7 +17,7 @@
 
         <EditText
             android:id="@+id/alertdialog_name"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
@@ -34,7 +34,7 @@
 
         <EditText
             android:id="@+id/alertdialog_phone"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
@@ -51,7 +51,7 @@
 
         <EditText
             android:id="@+id/alertdialog_address"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
 </LinearLayout>

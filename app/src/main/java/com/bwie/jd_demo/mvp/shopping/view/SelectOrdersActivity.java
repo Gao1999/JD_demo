@@ -42,11 +42,16 @@ public class SelectOrdersActivity extends BaseActivity<ShoppingPresenter> implem
     private TextView dzfTv;
     private TextView yzfTv;
     private TextView yqxTv;
+    private SharedPreferences sharedPreferences;
+    private boolean login;
 
     @Override
     protected void initData() {
         presenter.SelectOrderNet(uid, 0);
-        presenter.DefaultAddressNet(uid);
+        if (login) {
+            presenter.DefaultAddressNet(uid);
+        }
+
     }
 
     @Override
@@ -77,7 +82,9 @@ public class SelectOrdersActivity extends BaseActivity<ShoppingPresenter> implem
         yzfTv.setOnClickListener(this);
         yqxTv.setOnClickListener(this);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("jd", MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("jd", MODE_PRIVATE);
+        login = sharedPreferences.getBoolean("login", false);
+
         uid = sharedPreferences.getInt("uid", 0);
     }
 

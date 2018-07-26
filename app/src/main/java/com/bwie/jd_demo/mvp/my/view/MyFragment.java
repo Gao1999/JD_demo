@@ -263,6 +263,12 @@ public class MyFragment extends BaseFragment<MyPresenter> implements MyView {
         simpleDraweeView.setImageURI(icon);
         user.setText(mobile);
     }
-
-
+    //判断fragment的隐藏，没有隐藏则请求数据
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (hidden){
+            initData();
+        }
+    }
 }

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="150dp"
-    android:layout_height="160dp"
+    android:layout_width="100dp"
+    android:layout_height="130dp"
     android:gravity="center"
     android:orientation="vertical">
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/classify_recycle_right_child_pic"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_width="78dp"
+        android:layout_height="78dp" />
 
     <TextView
         android:id="@+id/classify_recycle_right_child_name"
@@ -16,6 +16,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="123"
-        android:textSize="24dp" />
+        android:textSize="18dp" />
 
 </LinearLayout>

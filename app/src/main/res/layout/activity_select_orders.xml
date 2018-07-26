@@ -10,8 +10,8 @@
     <LinearLayout
         android:id="@+id/SelectOrder_linear"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:background="#fff"
+        android:layout_height="130dp"
+        android:background="#BDB76B"
         android:orientation="vertical">
 
         <TextView
@@ -19,24 +19,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="姓名:123456789"
-            android:textSize="28dp" />
+            android:text="姓名:"
+            android:textSize="24dp" />
 
         <TextView
             android:id="@+id/SelectOrder_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="手机号:123456789"
-            android:textSize="28dp" />
+            android:text="手机号:"
+            android:textSize="24dp" />
 
         <TextView
             android:id="@+id/SelectOrder_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="默认收货地址:123456789"
-            android:textSize="28dp" />
+            android:text="默认收货地址:"
+            android:textSize="24dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -44,7 +44,7 @@
             android:layout_marginLeft="10dp"
             android:text="(点击收货地址,来改变默认地址或者修改地址)"
             android:textColor="#f00"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
     </LinearLayout>
 
     <LinearLayout

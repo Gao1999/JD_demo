@@ -10,18 +10,19 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="登录界面"
-        android:textSize="32dp" />
+        android:layout_marginTop="5dp"
+        android:textSize="30dp" />
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:src="@drawable/root" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -33,7 +34,7 @@
 
         <EditText
             android:id="@+id/my_reg_user"
-            android:layout_width="300dp"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:hint="请输入手机号..." />
@@ -54,7 +55,7 @@
 
         <EditText
             android:id="@+id/my_reg_pass"
-            android:layout_width="300dp"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:hint="请输入密码..." />
@@ -63,7 +64,9 @@
     <Button
         android:layout_marginTop="50dp"
         android:id="@+id/my_reg_btn"
-        android:layout_width="match_parent"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="#f00"
         android:text="注册" />

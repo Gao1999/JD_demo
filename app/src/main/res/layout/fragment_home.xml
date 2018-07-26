@@ -7,28 +7,30 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:background="#f00"
         android:gravity="center">
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:src="@drawable/a_s" />
 
         <EditText
             android:id="@+id/home_search"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_weight="9"
             android:background="#fff"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:drawableLeft="@drawable/a_5"
-            android:hint="请输入商品信息..." />
+            android:hint="1280 x 720分辨率" />
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:src="@drawable/a9x" />
     </LinearLayout>
@@ -55,7 +57,7 @@
                 <com.stx.xhb.xbanner.XBanner
                     android:id="@+id/home_xbanner"
                     android:layout_width="match_parent"
-                    android:layout_height="230dp"
+                    android:layout_height="150dp"
                     app:AutoPlayTime="3000"
                     app:isShowNumberIndicator="true"
                     app:pointsPosition="RIGHT"
@@ -64,14 +66,14 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/home_recycle"
                     android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    android:layout_marginTop="20dp" />
+                    android:layout_height="170dp"
+                    android:layout_marginTop="10dp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginRight="80dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
                     android:background="#FFF8DC">
 
@@ -108,7 +110,7 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/home_recycle_miaosha"
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
+                    android:layout_height="120dp"
                     android:layout_marginTop="20dp" />
 
                 <TextView

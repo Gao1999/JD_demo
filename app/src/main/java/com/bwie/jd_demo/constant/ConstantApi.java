@@ -21,7 +21,7 @@ public class ConstantApi {
 
     public static final String Classify_Products = "product/getProducts";
 
-    public static final String SearchProducts = "0product/searchProducts";
+    public static final String SearchProducts = "product/searchProducts";
 
     public static final String deleteCart = "product/deleteCart";
 

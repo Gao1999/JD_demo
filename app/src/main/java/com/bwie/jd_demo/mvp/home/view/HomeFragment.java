@@ -48,7 +48,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
 
     @Override
     protected void initData() {
-        presenter.AdFromDataNet();
+
 
         presenter.ClassFromDataNet();
     }
@@ -169,6 +169,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
                 startActivityForResult(intent, 100);
             }
         });
+
     }
 
     @Override
@@ -184,6 +185,8 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
         gridLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(myRecycleViewClass);
+
+        presenter.AdFromDataNet();
     }
 
     @Override

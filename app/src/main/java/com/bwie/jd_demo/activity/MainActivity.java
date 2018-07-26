@@ -14,7 +14,7 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
     private Timer timer;
-    private int i = 3;
+    private int i = 2;
     @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         @Override
